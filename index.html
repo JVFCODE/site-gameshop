@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godzilla - Games Shop</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto claro */
+            font-family: 'Orbitron', sans-serif;
+        }
+        header {
+            background-color: #1a1a1a; /* Fundo do cabeçalho */
+            padding: 20px;
+        }
+        header h1 {
+            color: #ffcc00; /* Neon amarelo */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #ffcc00; /* Neon amarelo */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff; /* Cor ao passar o mouse */
+        }
+        .hero {
+            background: url('/imagens/tokyo-japan-TOKYOTG0621-52012ff551dc46c4a87ac8e3151307a4.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 50px 20px;
+            color: #ffcc00; /* Neon amarelo */
+            text-align: center;
+        }
+        .products {
+            padding: 20px;
+        }
+        .product {
+            background-color: #1c1c1c; /* Fundo escuro para produtos */
+            border: 2px solid #ffcc00; /* Borda amarelo neon */
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ffcc00; /* Efeito de brilho ao passar o mouse */
+        }
+        .product img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .popup {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9); /* Fundo do pop-up */
+            color: #ffcc00; /* Neon amarelo */
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        .center-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .center-image img {
+            width: 80%; /* Ajuste o tamanho conforme necessário */
+            max-width: 600px; /* Limite máximo de largura */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Subscribe for Updates!</h2>
+        <p>Enter your email to receive promotions and news about our games!</p>
+        <input type="email" id="email" placeholder="Your email" required>
+        <button onclick="subscribe()">Subscribe</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Godzilla Games Shop</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to the Ultimate Gaming Experience!</h2>
+            <p>Immerse yourself in the world of epic battles and thrilling adventures. Gear up for the next level of gaming!</p>
+        </div>
+    </section>
+
+    <div class="center-image">
+        <img src="https://example.com/futuristic-image.jpg" alt="">
+    </div>
+
+    <section class="products">
+        <div class="container">
+            <h2>Featured Games</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Godzilla_Destroy_All_Monsters.jpg" alt="Godzilla: Destroy All Monsters">
+                    <h3>Godzilla: Destroy All Monsters</h3>
+                    <p>Join Godzilla and friends in an epic battle across the world! Team up with iconic monsters to save the planet!</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Cyberpunk_2077_cover.png" alt="Cyberpunk 2077">
+                    <h3>Cyberpunk 2077</h3>
+                    <p>Explore Night City, a vast open world filled with action, adventure, and technology! Become a legend in the dark streets.</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Monster_Hunter_Rise_cover.png" alt="Monster Hunter: Rise">
+                    <h3>Monster Hunter: Rise</h3>
+                    <p>Hunt down fearsome monsters in stunning environments and prove your skills as the ultimate hunter!</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/73/Godzilla_vs_Kong_poster.jpg" alt="Godzilla vs. Kong">
+                    <h3>Godzilla vs. Kong</h3>
+                    <p>Choose your side in this colossal showdown! Will you fight for humanity or join the titans?</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/02/Horizon_Zero_Dawn_cover.png" alt="Horizon Zero Dawn">
+                    <h3>Horizon Zero Dawn</h3>
+                    <p>Embark on a journey in a post-apocalyptic world filled with mechanized creatures. Uncover the mysteries of your past!</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/Doom_Eternal_cover.png" alt="Doom Eternal">
+                    <h3>Doom Eternal</h3>
+                    <p>Fight against the forces of Hell in this fast-paced action game that brings you non-stop adrenaline!</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to Godzilla Games Shop, your one-stop destination for all the latest and greatest games! Our mission is to bring the best gaming experience to all enthusiasts out there. Whether you’re a casual gamer or a hardcore fan, we have something for everyone!</p>
+            <p>Our team is composed of passionate gamers who understand the industry and strive to provide you with high-quality products and unbeatable customer service. Join our community and elevate your gaming experience to new heights!</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or concerns, feel free to reach out to us!</p>
+            <p>Email: <a href="mailto:support@godzillagames.com" style="color: #ffcc00;">support@godzillagames.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Follow us on social media:</p>
+            <ul>
+                <li><a href="#" style="color: #ffcc00;">Facebook</a></li>
+                <li><a href="#" style="color: #ffcc00;">Twitter</a></li>
+                <li><a href="#" style="color: #ffcc00;">Instagram</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Godzilla Games Shop. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#" style="color: #ffcc00;">Privacy Policy</a></li>
+                    <li><a href="#" style="color: #ffcc00;">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function subscribe() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert(`Thank you for subscribing with ${email}!`);
+                closePopup();
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        window.onload = showPopup;
+    </script>
+</body>
+</html>

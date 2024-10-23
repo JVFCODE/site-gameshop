@@ -1,0 +1,120 @@
+body {
+    background-color: #0e0e0e; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #111; /* Cor do cabeçalho */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #00ffcc; /* Cor do link */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff007f; /* Cor ao passar o mouse */
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./imagens/tokyo-japan-TOKYOTG0621-52012ff551dc46c4a87ac8e3151307a4.jpg') no-repeat center center/cover;
+    padding: 50px 0;
+}
+
+.hero h2 {
+    color: #00ffcc;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #00ffcc; /* Efeito de brilho */
+}
+
+.products {
+    padding: 20px 0;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    background: #222; /* Fundo dos produtos */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 2px solid #00ffcc; /* Borda neon */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 0 20px #00ffcc; /* Brilho ao passar o mouse */
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.about, .contact {
+    background: #333; /* Fundo da seção "Sobre" e "Contato" */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.about h2, .contact h2 {
+    color: #ff007f; /* Título das seções "Sobre" e "Contato" */
+}
+
+footer {
+    background-color: #111; /* Cor do rodapé */
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+footer nav a {
+    color: #00ffcc; /* Cor do link no rodapé */
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    color: #ff007f; /* Cor ao passar o mouse no rodapé */
+}
